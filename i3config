@@ -1,0 +1,182 @@
+#----------------------
+#Set modifier
+#----------------------
+set $alt Mod1
+#set $super Mod4
+
+#----------------------
+#Set font
+#----------------------
+font pango: Product Sans Regular 7
+
+#----------------------
+# Use Mouse+$super to drag floating windows
+# ---------------------
+floating_modifier $alt
+
+#----------------------
+#autostart
+#----------------------
+exec --no-startup-id xsettingsd &
+exec --no-startup-id compton -bi
+
+#----------------------
+#start a terminal
+#----------------------
+bindsym $alt+Return exec urxvt
+
+#----------------------
+# start dmenu (a program launcher)
+# ---------------------
+bindsym $alt+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $alt+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8
+
+#----------------------
+# screenshot
+# ---------------------
+bindsym Print exec scrot '%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+
+#----------------------
+# desktop and lock screen wallpaper
+#----------------------
+bindsym $alt+l exec i3lock -i /home/qualder/Pictures/Pictures/txtwalp.png
+exec --no-startup-id feh --bg-scale /home/qualder/Pictures/grayarchwalp.png
+
+#----------------------
+#change volume
+#----------------------	
+bindsym XF86AudioRaiseVolume exec sh -c 'pactl set-sink-volume 0 +5%' 	
+bindsym XF86AudioLowerVolume exec sh -c 'pactl set-sink-volume 0 -5%'  
+bindsym XF86AudioMute exec amixer set Master toggle
+
+#----------------------
+# kill focused window
+# ---------------------
+bindsym $alt+q kill
+
+#----------------------
+# change focus
+# ---------------------
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt +Right focus right
+
+#----------------------
+# move focused window
+# ---------------------
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
+
+#----------------------
+# split in horizontal or vertical orientation
+#----------------------
+bindsym $alt+h split h
+bindsym $alt+v split v
+
+#----------------------
+# enter fullscreen mode for the focused container
+#----------------------
+bindsym $alt+f fullscreen toggle
+
+#----------------------
+# change container layout split
+#----------------------
+bindsym $alt+s layout toggle split
+
+#----------------------
+# toggle tiling / floating
+#----------------------
+bindsym $alt+space floating toggle
+
+#----------------------
+# switch to workspace
+#----------------------
+bindsym $alt+1 workspace 1
+bindsym $alt+2 workspace 2
+bindsym $alt+3 workspace 3
+bindsym $alt+4 workspace 4
+bindsym $alt+5 workspace 5
+bindsym $alt+6 workspace 6
+bindsym $alt+7 workspace 7
+bindsym $alt+8 workspace 8
+bindsym $alt+9 workspace 9
+
+#-----------------------
+# move focused container to workspace
+#-----------------------
+bindsym $alt+Shift+1 move container to workspace 1
+bindsym $alt+Shift+2 move container to workspace 2
+bindsym $alt+Shift+3 move container to workspace 3
+bindsym $alt+Shift+4 move container to workspace 4
+bindsym $alt+Shift+5 move container to workspace 5
+bindsym $alt+Shift+6 move container to workspace 6
+bindsym $alt+Shift+7 move container to workspace 7
+bindsym $alt+Shift+8 move container to workspace 8
+bindsym $alt+Shift+9 move container to workspace 9
+
+#-----------------------
+# restart i3 inplace
+# ----------------------
+bindsym $alt+Shift+r restart
+
+#-----------------------
+# exit i3
+#-----------------------
+bindsym $alt+Shift+q exec "i3-nagbar -t warning -m 'Why are you running!? Why are you running!?' -b 'Run' 'i3-msg exit'"
+
+#-----------------------
+# resize window (you can also use the mouse for that)
+#----------------------
+mode "resize" { 
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Return mode "default"
+}
+bindsym $alt+r mode "resize"
+
+#----------------------
+# window rules, you can find the window class using xprop
+#----------------------
+for_window [class=".*"] border pixel 1
+#assign [class=] 1
+assign [class=Atom|Code] 2
+assign [class=firefox|Brave|Opera] 3
+#assign [class=] 4
+assign [class=vmplayer] 5
+#assign [class=] 6
+for_window [class=Viewnior|feh] floating enable
+for_window [class=URxvt|Firefox] focus
+
+#----------------------
+# panel
+#----------------------
+bar {
+	status_command i3status
+
+        colors {
+        	background #080808
+        	statusline #A9A9A9
+        	separator  #4b5262
+
+        	# colour of border, background, and text
+        	focused_workspace   #080808 #808080 #d8dee8
+        	active_workspace    #080808 #080808 #d8dee8
+        	inactive_workspace  #080808 #080808 #d8dee8
+        	urgent_workspace    #080808 #ebcb8b #080808
+    }
+}
+
+#----------------------
+# colour of border, background, text, indicator, and child_border
+#----------------------
+client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background           #2f343f
