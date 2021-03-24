@@ -1,10 +1,10 @@
 # My Config Files
 
-WM: i3
-Terminal: Urxvt
-Editor: Vim
+##### WM: i3
+##### Terminal: Urxvt
+##### Editor: Vim
 
-Vim Plugins:
+##### Vim Plugins:
     NERDTree
     CoC (Conquer of Completion)
     indentLine
