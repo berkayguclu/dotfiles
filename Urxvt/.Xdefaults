@@ -1,0 +1,36 @@
+!! Configurations
+
+!!URxvt.termName: rxvt-unicode
+!!TERM=rxvt-unicode
+!!COLORTERM=rxvt
+URxvt.transparent    : True
+URxvt.shading        : 100
+URxvt.saveLines      : 8000
+URxvt.geometry       : 92x24
+URxvt.internalBorder : 14
+URxvt.externalBorder : 0
+URxvt.letterSpace    : 0
+URxvt.lineSpace      : 0
+URxvt.cursorBlink    : true
+URxvt.urgentOnBell   : true
+URxvt.depth          : 24
+!URxvt.font          : xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true:hinting=true
+!URxvt.boldFont      : xft:Bitstream Vera Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
+URxvt.font           : xft:DejaVu Sans Mono:pixelsize=13:antialias=true:hinting=true
+URxvt.boldFont       : xft:DejaVu Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
+URxvt.scrollBar      : False
+
+
+!! Colors
+
+URxvt.foreground : Lavender
+URxvt.background : Darkslategray
+URxvt.tintColor  : Darkslategray
+URxvt.color1     : Midnightblue
+URxvt.color2     : Darkorchid
+URxvt.color3     : Gray
+URxvt.color11    : RoyalBlue 
+URxvt.color5     : RoyalBlue
+URxvt.color11    : Lime
+URxvt.color12    : RoyalBlue
+URxvt.color14    : Teal

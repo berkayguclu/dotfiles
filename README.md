@@ -1,13 +1,17 @@
 # My Config Files
 
-### i3 and i3status configs
+WM: i3
+Terminal: Urxvt
+Editor: Vim
+
+Vim Plugins:
+    NERDTree
+    CoC (Conquer of Completion)
+    indentLine
+    Airline
+    Bracey
+
 
 ![i3](Images/i3.png)
 
-******
-
-### Vim configs
-
-![vim-py](Images/vim_py.png)
-
-![vim-php](Images/vim_php.png)
+![vim-py](Images/vim.png)
