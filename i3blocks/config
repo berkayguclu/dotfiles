@@ -1,0 +1,81 @@
+# i3blocks config file
+
+# Global Properties
+command=/home/gev/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+separator=
+
+# Volume indicator
+[volume]
+interval=persist
+SUBSCRIBE=1
+USE_ALSA_NAME=1
+
+# Temperature
+[temperature]
+interval=1
+separator=false
+separator_block_width=10
+
+# CPU usage
+[cpu_usage]
+interval=1
+min_width=⣾⣄ 100.00%
+separator=false
+separator_block_width=5
+
+[load]
+label= 
+command=uptime  | grep -oP '(?<=average:).*'
+interval=1
+separator_block_width=10
+
+# Memory usage
+[memory]
+label= 
+separator=false
+interval=1
+
+[memory]
+label= 
+instance=swap
+separator=false
+interval=30
+
+# Disk usage
+[disk]
+label= 
+DIR=/
+interval=30
+
+# Network interface monitoring
+[wifi]
+INTERFACE=wlp2s0f0
+interval=10
+separator=false
+separator_block_width=5
+
+[iface]
+IFACE=wlp2s0f0
+interval=10
+separator=false
+separator_block_width=5
+
+[bandwidth]
+INTERFACE=wlp2s0f0
+interval=1
+INLABEL= 
+OUTLABEL=
+min_width=xxxxxxxxxx 
+
+# Battery indicator
+[battery]
+interval=10
+
+# Date Time
+#
+[time]
+label= 
+command=date '+%d/%m/%Y   %H:%M:%S  '
+interval=1
