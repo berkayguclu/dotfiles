@@ -1,11 +1,17 @@
 # My Config Files
 
-WM: i3-gaps
-Bar: i3Blocks
-Terminal: Urxvt + tmux
-Editor: Vim
+<<<<<<< HEAD
+WM: i3-gaps\n
+Bar: i3Blocks\n
+Terminal: Urxvt + tmux\n
+Editor: Vim\n
+=======
+##### WM: i3
+##### Terminal: Urxvt
+##### Editor: Vim
+>>>>>>> 18e592892a99c0b823b2dd40c41031d3c73cbae8
 
-Vim Plugins:
+##### Vim Plugins:
     NERDTree
     CoC (Conquer of Completion)
     indentLine
