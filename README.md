@@ -1,7 +1,8 @@
 # My Config Files
 
-WM: i3
-Terminal: Urxvt
+WM: i3-gaps
+Bar: i3Blocks
+Terminal: Urxvt + tmux
 Editor: Vim
 
 Vim Plugins:
@@ -12,6 +13,8 @@ Vim Plugins:
     Bracey
 
 
-![i3](Images/i3.png)
+![i3-first](Images/withoutbottom.png)
 
-![vim-py](Images/vim.png)
+![i3-second](Images/withbottom.png)
+
+![vim-py](Images/vimscreen.png)

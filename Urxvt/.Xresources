@@ -1,3 +1,0 @@
-URxvt.resize-font.smaller: C-j
-URxvt.resize-font.bigger:  C-k
-URxvt.font:               xft:dejavusansmono\ for\ powerline:size=9

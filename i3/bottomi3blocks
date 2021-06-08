@@ -1,0 +1,74 @@
+# i3blocks config file
+
+# Global Properties
+command=/home/gev/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+separator=
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+[mediaplayer]
+instance=spotify
+interval=5
+signal=10
+
+[mediaplayer]
+instance=
+interval=5
+signal=10
+
+[focusedwindow]
+label= 
+command=bash /home/gev/.config/i3blocks/i3-focusedwindow/i3-focusedwindow
+interval=persist
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+[openvpn]
+instance=tun0
+interval=1
+separator=false
+separator_block_width=5
+
+[iface]
+IFACE=tun0
+interval=10
+
+[timer_and_stopwatch]
+format=json
+interval=1
+TIMER_LABEL= 
+STOPWATCH_LABEL= 
+DEFAULT_MODE=timer
+DEFAULT_STOPWATCH=0
+DEFAULT_TIMER=60
+PLAY_LABEL= 
+PAUSE_LABEL= 
+#TIMER_LOOP=true
+#NEUTRAL_COLOR=#000000
+
+[keyindicator]
+KEY=CAPS
+TEXT_OFF=CAPS 
+TEXT_ON=CAPS 
+markup=pango
+interval=once
+signal=11
+
+[keyindicator]
+KEY=NUM
+TEXT_OFF=NUM 
+TEXT_ON=NUM 
+markup=pango
+interval=once
+signal=11
+
+[user]
+label= 
+command=lslogins | grep $USER | awk '{print $2}'
+interval=once
+min_width=35
